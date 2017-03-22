@@ -80,5 +80,5 @@ dhcp-boot=tag:gpxe,/ipxe.pxe
 
 dhcp-match=set:ipxe,175 # iPXE sends a 175 option.
 dhcp-boot=tag:!ipxe,/undionly.kpxe
-dhcp-boot=http://{{ server.local_address }}:{{ file_url_port }}/boot.ipxe
+dhcp-boot=http://{{ server.local_address }}:{{ server.file_url_port }}/boot.ipxe
 
