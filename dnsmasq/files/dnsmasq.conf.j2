@@ -10,7 +10,7 @@
 # leaving only DHCP and/or TFTP.
 {%- if server.disable_dnsmasq_dns %}
 port=0
-{% else %}
+{%- else %}
 port=53
 {%- endif %}
 
