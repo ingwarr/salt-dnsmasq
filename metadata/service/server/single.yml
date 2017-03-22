@@ -1,0 +1,16 @@
+applications:
+- dnsmasq
+classes:
+- service.dnsmasq.support
+parameters:
+  dnsmasq:
+    server:
+      enabled: true
+      bind:
+        address: 0.0.0.0
+      interface: eth0
+      dhcp_low_address: 10.0.175.180
+      dhcp_high_address: 10.0.175.250
+      dhcp_netmask: 255.255.254.0
+      lease: 6h
+      tftp_path: /tftpboot

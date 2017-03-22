@@ -1,0 +1,10 @@
+applications:
+- dnsmasq
+classes:
+- service.dnsmasq.support
+parameters:
+  dnsmasq:
+    server:
+      enabled: true
+      bind:
+        address: 0.0.0.0

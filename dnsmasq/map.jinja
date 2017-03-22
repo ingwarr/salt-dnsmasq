@@ -1,0 +1,29 @@
+
+{%- set source_engine = salt['pillar.get']('dnsmasq:server:source:engine') %}
+
+{%- load_yaml as base_defaults %}
+{%- if source_engine == 'git' %}
+Debian:
+  pkgs:
+  - dnsmasq
+  dir:
+    base: /srv/dnsmasq/venv
+    home: /var/lib/dnsmasq
+    workspace: /srv/dnsmasq/workspace
+RedHat:
+  pkgs:
+  - dnsmasq
+  dir:
+    base: /srv/dnsmasq/venv
+    home: /var/lib/dnsmasq
+    workspace: /srv/dnsmasq/workspace
+{%- else %}
+Debian:
+  pkgs:
+  - dnsmasq
+  dir:
+    base: /usr/lib/dnsmasq
+{%- endif %}
+{%- endload %}
+
+{%- set server = salt['grains.filter_by'](base_defaults, merge=salt['pillar.get']('dnsmasq:server')) %}
