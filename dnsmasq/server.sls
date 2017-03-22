@@ -7,7 +7,7 @@ dnsmasq_server_packages:
 
 /etc/dnsmasq.conf:
   file.managed:
-  - source: salt://dnsmasq/files/dnsmasq.conf
+  - source: salt://dnsmasq/files/dnsmasq.conf.j2
   - template: jinja
   - require:
     - pkg: dnsmasq_server_packages
