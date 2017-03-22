@@ -70,7 +70,7 @@ dhcp-range={{server.dhcp_pool_start}},{{server.dhcp_pool_end}},{{server.dhcp_lea
 # router is the same machine as the one running dnsmasq.
 dhcp-option=3,{{server.dnsmasq_router}}
 
-dhcp-option=6,{{dnsmasq_dns_servers}}
+dhcp-option=6,{{server.dnsmasq_dns_servers}}
 
 # Boot for Etherboot gPXE. The idea is to send two different
 # filenames, the first loads gPXE, and the second tells gPXE what to
