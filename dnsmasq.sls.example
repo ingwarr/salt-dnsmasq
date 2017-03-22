@@ -1,0 +1,11 @@
+dnsmasq:
+  server:
+    enabled: true
+    bind:
+      address: 10.0.175.2
+    interface: ens7
+    dhcp_low_address: 10.0.175.180
+    dhcp_high_address: 10.0.175.250
+    dhcp_netmask: 255.255.254.0
+    lease: 6h
+    tftp_path: /tftpboot
