@@ -12,11 +12,11 @@ dnsmasq_server_packages:
   - require:
     - pkg: dnsmasq_server_packages
 
-dnsmasq_server_service:
+dnsmasq:
   service.running:
-    - enable: true
-    - name: 
-       - dnsmasq
+    - enable: True
+    - reload: True 
     - watch:
       - file: /etc/dnsmasq.conf
+
 {%- endif %}
