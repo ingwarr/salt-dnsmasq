@@ -15,7 +15,6 @@ dnsmasq_server_packages:
 dnsmasq:
   service.running:
     - enable: True
-    - reload: True 
     - watch:
       - file: /etc/dnsmasq.conf
 
